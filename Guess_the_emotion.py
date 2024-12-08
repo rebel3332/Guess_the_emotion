@@ -23,7 +23,8 @@ with open('target.pkl', 'rb') as f:
     emotions_dict = pickle.load(f)
 
 
-text = 'Самый лучший товар'#input("Введите текст:")
+# text = 'Самый лучший товар'
+text = input("Введите текст:")
 X = [ProProcessing(text)]
 predict = model.predict(X)[0]
 emotion = next(key for key, value in emotions_dict.items() if value == predict)
